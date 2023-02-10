@@ -1,11 +1,11 @@
 from flask import Flask , request 
 from database import Mysql
 from datetime import datetime
-
+import os 
 
 
 app = Flask(__name__)
-db = Mysql(host='',user='',password='',database='')
+db = Mysql(host=os.getenv('MYSQLHOST'),user=os.getenv('MYSQLUESR'),password=os.getenv('MYSQLPASSWORD'),database='price')
 
 @app.route('/ping')
 def ping():
