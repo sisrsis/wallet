@@ -19,6 +19,6 @@ def price():
                 coin =  str(request.args['coin'])
                 price = str(request.args['price'])
         except:
-                return {"status":401}
+                return {"status":402}
         db.insert(coin,{"price":price,"times":time})
         return {"status":200, "price":price,"coin":coin}
