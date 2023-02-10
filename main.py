@@ -21,4 +21,4 @@ def price():
         except:
                 return {"status":401}
         db.insert(coin,{"price":price,"times":time})
-        return f"{price} {coin}"
+        return {"status":200, "price":price,"coin":coin}
